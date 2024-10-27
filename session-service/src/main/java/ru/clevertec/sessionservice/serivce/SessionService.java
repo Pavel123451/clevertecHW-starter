@@ -15,6 +15,9 @@ public class SessionService {
     private final SessionRepository sessionRepository;
 
     public Session createOrGetSession(String login) {
+        if(login == null || login.isBlank()) {
+            throw new IllegalArgumentException("Login cannot be null or empty");
+        }
         Optional<Session> sessionOpt = getSession(login);
         if (sessionOpt.isPresent() && sessionOpt.get().getCloseAt().isAfter(LocalDateTime.now())) {
             return sessionOpt.get();

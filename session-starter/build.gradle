@@ -29,7 +29,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:3.2.7"
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.7'
+    testImplementation 'org.wiremock:wiremock:3.9.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

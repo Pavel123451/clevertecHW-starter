@@ -1,4 +1,4 @@
-package ru.clevertec.sessionservice.config;
+package ru.clevertec.sessionservice.scheduler;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;

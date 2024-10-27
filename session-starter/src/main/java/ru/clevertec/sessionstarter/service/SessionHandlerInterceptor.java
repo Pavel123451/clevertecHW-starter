@@ -42,7 +42,9 @@ public class SessionHandlerInterceptor implements MethodInterceptor {
             log.info("Login {} passed blacklist check", login);
 
             log.info("Attempting to retrieve or create session for login: {}", login);
-            Session session = sessionServiceClient.getSession(login);
+            SessionRequest request = new SessionRequest();
+            request.setLogin(login);
+            Session session = sessionServiceClient.getSession(request);
             log.info("Session retrieved/created with id: {} for login: {}", session.getId(), login);
 
             injectSessionIntoArgs(args, session);
@@ -76,3 +78,4 @@ public class SessionHandlerInterceptor implements MethodInterceptor {
         }
     }
 }
+
